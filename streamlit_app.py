@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error
 import numpy as np
 
 def display_feature_importance(model, X):
-    # Get feature importances
+    # Get feature importances-
     importances = model.feature_importances_
     # Associate importances with feature names
     feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances})
@@ -32,12 +32,12 @@ st.title('House Price Prediction App')
 st.write("""
 This app predicts the price of a house based on specific features. The features used for the prediction are:
 
-OverallQual: Overall material and finish quality.
-GrLivArea: Above ground living area square feet.
-GarageCars: Size of garage in car capacity.
-TotalBsmtSF: Total square feet of basement area.
-FullBath: Number of full bathrooms.
-YearBuilt: Original construction date.
+- OverallQual: Overall material and finish quality.
+- GrLivArea: Above ground living area square feet.
+- GarageCars: Size of garage in car capacity.
+- TotalBsmtSF: Total square feet of basement area.
+- FullBath: Number of full bathrooms.
+- YearBuilt: Original construction date.
 After inputting the feature values, click the 'Predict' button to see the predicted house price.
 """)
 
