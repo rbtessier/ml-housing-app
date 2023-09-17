@@ -45,9 +45,6 @@ def display_feature_importance(model, X):
     # Sort features by importance in descending order
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
     feature_importance['Importance'] = feature_importance['Importance'].apply(lambda x: "{:.2f} %".format(x * 100))
-
-    #remove index
-    feature_importance.reset_index(drop=True, inplace=True)
     
     # Display the feature importances
     st.dataframe(feature_importance, index = False)
@@ -72,6 +69,7 @@ After selecting the following features, click the **'Predict'** button at the bo
 """)
 
 
+custom_slider_style("#be9e44") 
 #overall_qual = st.slider('Overall Quality', min_value=1, max_value=10, value=5)
 grliv_area = st.slider('Above Ground Living Area (sq. ft.)', min_value=0, max_value=10000, value=2000)
 garage_cars = st.slider('Garage Size (Cars)', min_value=0, max_value=4, value=2)
@@ -79,7 +77,7 @@ total_bsmt_sf = st.slider('Total Basement Area (sq. ft.)', min_value=0, max_valu
 bedroom = st.slider('Number of Bedrooms', min_value=0, max_value=8, value=2)
 full_bath = st.slider('Number of Full Bathrooms', min_value=0, max_value=4, value=2)
 year_built = st.slider('Year the House was Built', min_value=1900, max_value=2023, value=2000)
-custom_slider_style("#be9e44") 
+
 
 if st.button('Predict'):
     #input_data_w_features = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
