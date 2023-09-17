@@ -32,7 +32,7 @@ def display_feature_importance(model, X):
 
 data = pd.read_csv("housing.csv")
 
-features = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'Bedroom', 'FullBath', 'YearBuilt']
+features = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
 X = data[features]
 y = data['SalePrice']
 
@@ -51,6 +51,7 @@ The attributes used are as follows:
 - Above Ground Living Area (sq. ft.)[(]GrLivArea]: Above ground living area square feet.
 - Garage Size (Cars) [GarageCars]: Size of garage in car capacity.
 - Total Basement Area (sq. ft.) [TotalBsmtSF]: Total square feet of basement area.
+- Number of Bedrooms [BedroomAbvGr]: Number of above ground bedrooms
 - Number of Full Bathrooms [FullBath]: Number of full bathrooms.
 - Year the House was Built [YearBuilt]: Original construction date.
          
