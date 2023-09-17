@@ -32,7 +32,8 @@ def display_feature_importance(model, X):
 
 data = pd.read_csv("housing.csv")
 
-features = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
+features_w_qual = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
+features = ['GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
 X = data[features]
 y = data['SalePrice']
 
@@ -49,7 +50,7 @@ After selecting the following features, click the **'Predict'** button at the bo
 """)
 
 custom_slider_style("#be9e44") 
-overall_qual = st.slider('Overall Quality', min_value=1, max_value=10, value=5)
+#overall_qual = st.slider('Overall Quality', min_value=1, max_value=10, value=5)
 grliv_area = st.slider('Above Ground Living Area (sq. ft.)', min_value=0, max_value=10000, value=2000)
 garage_cars = st.slider('Garage Size (Cars)', min_value=0, max_value=4, value=2)
 total_bsmt_sf = st.slider('Total Basement Area (sq. ft.)', min_value=0, max_value=5000, value=1000)
@@ -59,7 +60,8 @@ year_built = st.slider('Year the House was Built', min_value=1900, max_value=202
 
 
 if st.button('Predict'):
-    input_data = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
+    input_data_w_features = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
+    input_data = = np.array([[grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     prediction = model.predict(input_data)
 
     st.write('The predicted house price is $', prediction[0])
@@ -69,7 +71,6 @@ if st.button('Predict'):
     st.write("""
     Where features are defined as follows:
     
-    - OverallQual: Overall material and finish quality as assessed on appraisal.
     - GrLivArea: Above ground living area square feet.
     - GarageCars: Size of garage in car capacity.
     - TotalBsmtSF: Total square feet of basement area.
