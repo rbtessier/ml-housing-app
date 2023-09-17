@@ -62,6 +62,9 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = RandomForestRegressor(n_estimators=100)
 model.fit(X_train, y_train)
 
+
+st.image('path_to_image.png', caption='Your Image Caption', use_column_width=True)
+
 st.title('Ames House Price Prediction')
 
 st.write("""
