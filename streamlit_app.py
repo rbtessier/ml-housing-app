@@ -20,10 +20,11 @@ def custom_slider_style(color="#be9e44"):  # Use your desired color
 
 def display_feature_importance(model, X):
     # Get feature importances-
-    importances = model.feature_importances_
+    importances_numbers = model.feature_importances_
     # Associate importances with feature names
     feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances})
-
+    feature_importance.Importance = (feature_importance.Importance* 100).astype(str) + '%'
+    
     # Sort features by importance in descending order
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
 
