@@ -89,7 +89,7 @@ if st.button('Predict'):
     input_data = np.array([[grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     prediction = model.predict(input_data)
 
-    st.write('The predicted house price is $', prediction[0])
+    st.write('The predicted house price is **${:.2f}**'.format(prediction[0]))
 
     st.write('Below is the percentage each feature contributed to the predicted house price')
         
