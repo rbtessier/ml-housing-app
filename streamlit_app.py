@@ -18,10 +18,20 @@ def custom_slider_style(color="#be9e44"):  # Use your desired color
     """
     st.markdown(custom_css, unsafe_allow_html=True)
 
+
+
 def display_feature_importance(model, X):
+
+    description_dict = {
+    'GarageCars': 'Size of garage in car capacity.',
+    'TotalBsmtSF': 'Total square feet of basement area.',
+    'BedroomAbvGr': 'Number of above ground bedrooms',
+    'FullBath': 'Number of full bathrooms.',
+    'YearBuilt': 'Original construction date.'
+    }
     # Get feature importances-
     importances = model.feature_importances_
-    description = pd.DataFrame([value.split(':')[1].strip() for value in ['GrLivArea: Above ground living area square feet.', 'GarageCars: Size of garage in car capacity.', 'TotalBsmtSF: Total square feet of basement area.', 'BedroomAbvGr: Number of above ground bedrooms', 'FullBath: Number of full bathrooms.', 'YearBuilt: Original construction date.']], columns=['Description'])
+    description = [description_dict.get(feature, '') for feature in X.columns]
     # Associate importances with feature names
     feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances, 'Description' : description})
     
