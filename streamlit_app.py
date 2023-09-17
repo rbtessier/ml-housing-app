@@ -25,12 +25,12 @@ def display_feature_importance(model, X):
 
     #Later I'll make this more global as this is a useful mapping for better code but for now its heara
     description_dict = {
-    'GrLivArea': 'Above ground living area square feet.',  
-    'GarageCars': 'How many cars the garage fits.',
-    'TotalBsmtSF': 'Total square feet of basement area.',
-    'BedroomAbvGr': 'Number of above ground bedrooms',
-    'FullBath': 'Number of full bathrooms.',
-    'YearBuilt': 'Original construction date.'
+    'GrLivArea': 'Above Ground Living Area (sq. ft.)',  
+    'GarageCars': 'Garage Size (# of Cars)',
+    'TotalBsmtSF': 'Total Basement Area (sq. ft.)',
+    'BedroomAbvGr': 'Number of Above Ground Bedrooms',
+    'FullBath': 'Number of Full Bathrooms',
+    'YearBuilt': 'Year the House was Built.'
     }
     
     # Get feature importances-
@@ -77,9 +77,9 @@ After selecting the following features, click the **'Predict'** button at the bo
 custom_slider_style("#be9e44") 
 #overall_qual = st.slider('Overall Quality', min_value=1, max_value=10, value=5)
 grliv_area = st.slider('Above Ground Living Area (sq. ft.)', min_value=0, max_value=10000, value=2000)
-garage_cars = st.slider('Garage Size (Cars)', min_value=0, max_value=4, value=2)
+garage_cars = st.slider('Garage Size (# of Cars)', min_value=0, max_value=4, value=2)
 total_bsmt_sf = st.slider('Total Basement Area (sq. ft.)', min_value=0, max_value=5000, value=1000)
-bedroom = st.slider('Number of Bedrooms', min_value=0, max_value=8, value=2)
+bedroom = st.slider('Number of Above Ground Bedrooms', min_value=0, max_value=8, value=2)
 full_bath = st.slider('Number of Full Bathrooms', min_value=0, max_value=4, value=2)
 year_built = st.slider('Year the House was Built', min_value=1900, max_value=2023, value=2000)
 
