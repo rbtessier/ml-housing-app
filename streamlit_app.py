@@ -88,8 +88,9 @@ if st.button('Predict'):
     #input_data_w_features = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     input_data = np.array([[grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     prediction = model.predict(input_data)
-
-    st.write('The predicted house price is **${:.2f}**'.format(prediction[0]))
+    #be9e44
+    st.markdown("This is a normal text and here is a <span style='color:#3498db'>Streamlit</span> word in blue.", unsafe_allow_html=True)
+    st.markdown('The predicted house price is <span style='color:#3498db'>**${:.2f}**</span>'.format(prediction[0]))
 
     st.write('Below is the percentage each feature contributed to the predicted house price')
         
