@@ -63,7 +63,7 @@ model = RandomForestRegressor(n_estimators=100)
 model.fit(X_train, y_train)
 
 
-st.image('streamlit-housing.jpg', caption='A House in Ames, Iowa', use_column_width=True))
+st.image('streamlit-housing.jpg', caption='A House in Ames, Iowa', use_column_width=True)
 
 st.title('Ames House Price Prediction')
 
