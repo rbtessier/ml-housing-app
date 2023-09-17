@@ -90,7 +90,7 @@ if st.button('Predict'):
     prediction = model.predict(input_data)
     
     
-    st.markdown("The predicted house price is <span style='color:#be9e44'>**${:,.2f}**</span>".format(prediction[0]), unsafe_allow_html=True)
+    st.markdown("**The predicted house price is** <span style='color:#be9e44'>**${:,.2f}**</span>".format(prediction[0]), unsafe_allow_html=True)
 
     st.write('Below is the percentage each feature contributed to the predicted house price')
         
