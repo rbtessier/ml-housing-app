@@ -23,6 +23,7 @@ def custom_slider_style(color="#be9e44"):  # Use your desired color
 def display_feature_importance(model, X):
 
     description_dict = {
+    'GrLivArea': 'Above ground living area square feet.',  
     'GarageCars': 'Size of garage in car capacity.',
     'TotalBsmtSF': 'Total square feet of basement area.',
     'BedroomAbvGr': 'Number of above ground bedrooms',
