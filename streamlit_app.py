@@ -5,7 +5,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 import numpy as np
 
-def custom_slider_style(color="#FF5733"):  # Use your desired color
+def custom_slider_style(color="#be9e44"):  # Use your desired color
     custom_css = f"""
     <style>
         .slider .thumb {{
@@ -48,7 +48,7 @@ This app predicts the price of a house in **Ames, Iowa** based on specific attri
 The attributes used are as follows:
 
 - Overall Quality[OverallQual]: Overall material and finish quality as assessed on appraisal.
-- Above Ground Living Area (sq. ft.)[(]GrLivArea]: Above ground living area square feet.
+- Above Ground Living Area (sq. ft.)[GrLivArea]: Above ground living area square feet.
 - Garage Size (Cars) [GarageCars]: Size of garage in car capacity.
 - Total Basement Area (sq. ft.) [TotalBsmtSF]: Total square feet of basement area.
 - Number of Bedrooms [BedroomAbvGr]: Number of above ground bedrooms
