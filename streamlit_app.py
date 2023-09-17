@@ -61,7 +61,7 @@ year_built = st.slider('Year the House was Built', min_value=1900, max_value=202
 
 if st.button('Predict'):
     input_data_w_features = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
-    input_data = = np.array([[grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
+    input_data = np.array([[grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     prediction = model.predict(input_data)
 
     st.write('The predicted house price is $', prediction[0])
