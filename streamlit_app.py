@@ -40,6 +40,10 @@ def display_feature_importance(model, X):
     # Sort features by importance in descending order
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
     feature_importance['Importance'] = feature_importance['Importance'].apply(lambda x: "{:.2f} %".format(x * 100))
+
+    #remove index
+    feature_importance.reset_index(drop=True, inplace=True)
+    
     # Display the feature importances
     st.dataframe(feature_importance, index = False)
 
