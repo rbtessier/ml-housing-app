@@ -32,7 +32,7 @@ def display_feature_importance(model, X):
 
 data = pd.read_csv("housing.csv")
 
-features_w_qual = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
+#features_w_qual = ['OverallQual', 'GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
 features = ['GrLivArea', 'GarageCars', 'TotalBsmtSF', 'BedroomAbvGr', 'FullBath', 'YearBuilt']
 X = data[features]
 y = data['SalePrice']
@@ -60,7 +60,7 @@ year_built = st.slider('Year the House was Built', min_value=1900, max_value=202
 
 
 if st.button('Predict'):
-    input_data_w_features = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
+    #input_data_w_features = np.array([[overall_qual, grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     input_data = np.array([[grliv_area, garage_cars, total_bsmt_sf,bedroom, full_bath, year_built]])
     prediction = model.predict(input_data)
 
