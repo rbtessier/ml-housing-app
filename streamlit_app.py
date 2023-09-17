@@ -26,7 +26,7 @@ def display_feature_importance(model, X):
     #Later I'll make this more global as this is a useful mapping for better code but for now its heara
     description_dict = {
     'GrLivArea': 'Above ground living area square feet.',  
-    'GarageCars': 'Size of garage in car capacity.',
+    'GarageCars': 'How many cars the garage fits.',
     'TotalBsmtSF': 'Total square feet of basement area.',
     'BedroomAbvGr': 'Number of above ground bedrooms',
     'FullBath': 'Number of full bathrooms.',
