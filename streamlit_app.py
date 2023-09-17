@@ -43,19 +43,9 @@ model.fit(X_train, y_train)
 st.title('Ames House Price Prediction')
 
 st.write("""
-This app predicts the price of a house in **Ames, Iowa** based on specific attribures of the home. 
-         
-The attributes used are as follows:
+This app predicts the price of a house in **Ames, Iowa** based on specific features of the home. 
 
-- Overall Quality[OverallQual]: Overall material and finish quality as assessed on appraisal.
-- Above Ground Living Area (sq. ft.)[GrLivArea]: Above ground living area square feet.
-- Garage Size (Cars) [GarageCars]: Size of garage in car capacity.
-- Total Basement Area (sq. ft.) [TotalBsmtSF]: Total square feet of basement area.
-- Number of Bedrooms [BedroomAbvGr]: Number of above ground bedrooms
-- Number of Full Bathrooms [FullBath]: Number of full bathrooms.
-- Year the House was Built [YearBuilt]: Original construction date.
-         
-After selecting the attributes value of the house you want to know the price of, click the **'Predict'** button at the bottom of the page to see the predicted house price.
+After selecting the following features, click the **'Predict'** button at the bottom of the page to see the predicted house price.
 """)
 
 custom_slider_style("#be9e44") 
@@ -76,5 +66,16 @@ if st.button('Predict'):
 
     display_feature_importance(model, X)
 
+    st.write("""
+    Where features are defined as follows:
+    
+    - OverallQual: Overall material and finish quality as assessed on appraisal.
+    - GrLivArea: Above ground living area square feet.
+    - GarageCars: Size of garage in car capacity.
+    - TotalBsmtSF: Total square feet of basement area.
+    - BedroomAbvGr: Number of above ground bedrooms
+    - FullBath: Number of full bathrooms.
+    - YearBuilt: Original construction date.
+    """)
 
 
