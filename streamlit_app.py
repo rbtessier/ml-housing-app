@@ -41,7 +41,7 @@ def display_feature_importance(model, X):
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
     feature_importance['Importance'] = feature_importance['Importance'].apply(lambda x: "{:.2f} %".format(x * 100))
     # Display the feature importances
-    st.dataframe(feature_importance)
+    st.dataframe(feature_importance, index = False)
 
 data = pd.read_csv("housing.csv")
 
@@ -80,16 +80,5 @@ if st.button('Predict'):
     st.write('The predicted house price is $', prediction[0])
 
     display_feature_importance(model, X)
-
-    st.write("""
-    Where features are defined as follows:
-    
-    - GrLivArea: Above ground living area square feet.
-    - GarageCars: Size of garage in car capacity.
-    - TotalBsmtSF: Total square feet of basement area.
-    - BedroomAbvGr: Number of above ground bedrooms
-    - FullBath: Number of full bathrooms.
-    - YearBuilt: Original construction date.
-    """)
 
 
