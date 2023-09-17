@@ -27,7 +27,7 @@ def display_feature_importance(model, X):
     
     # Sort features by importance in descending order
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
-    feature_importance['Importance'] = (feature_importance['Importance']* 100).astype(str) + '%'
+    feature_importance['Importance'] = feature_importance['Importance'].apply(lambda x: "{:.2f} %".format(x * 100))
     # Display the feature importances
     st.dataframe(feature_importance)
 
