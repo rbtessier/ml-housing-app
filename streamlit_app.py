@@ -21,8 +21,9 @@ def custom_slider_style(color="#be9e44"):  # Use your desired color
 def display_feature_importance(model, X):
     # Get feature importances-
     importances = model.feature_importances_
+    description = {key: value.split(':')[1].strip() for key, value in {'GrLivArea': 'GrLivArea: Above ground living area square feet.', 'GarageCars': 'GarageCars: Size of garage in car capacity.', 'TotalBsmtSF': 'TotalBsmtSF: Total square feet of basement area.', 'BedroomAbvGr': 'BedroomAbvGr: Number of above ground bedrooms', 'FullBath': 'FullBath: Number of full bathrooms.', 'YearBuilt': 'YearBuilt: Original construction date.'}.items()}
     # Associate importances with feature names
-    feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances})
+    feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances, 'Description' : description})
     
     
     # Sort features by importance in descending order
