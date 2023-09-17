@@ -47,7 +47,7 @@ def display_feature_importance(model, X):
     feature_importance['Importance'] = feature_importance['Importance'].apply(lambda x: "{:.2f} %".format(x * 100))
     
     # Display the feature importances
-    st.dataframe(feature_importance, index = False)
+    st.dataframe(feature_importance)
 
 data = pd.read_csv("housing.csv")
 
