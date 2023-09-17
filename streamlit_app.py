@@ -40,7 +40,9 @@ def display_feature_importance(model, X):
     description = [description_dict.get(feature, '') for feature in X.columns]
     
     # Associate importances with feature names
-    feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances, 'Description' : description})
+    #feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances, 'Description' : description})
+    feature_importance = pd.DataFrame({'Feature':description, 'Importance': importances})
+
     
     # Sort features by importance in descending order
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
@@ -86,6 +88,8 @@ if st.button('Predict'):
 
     st.write('The predicted house price is $', prediction[0])
 
+    st.write('Below is the percentage each feature contributed to the predicted house price')
+        
     display_feature_importance(model, X)
 
 
