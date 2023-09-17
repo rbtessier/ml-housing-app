@@ -23,11 +23,11 @@ def display_feature_importance(model, X):
     importances_numbers = model.feature_importances_
     # Associate importances with feature names
     feature_importance = pd.DataFrame({'Feature': X.columns, 'Importance': importances})
-    feature_importance.Importance = (feature_importance.Importance* 100).astype(str) + '%'
+    
     
     # Sort features by importance in descending order
     feature_importance = feature_importance.sort_values('Importance', ascending=False)
-
+    feature_importance['Importance'] = (feature_importance['Importance']* 100).astype(str) + '%'
     # Display the feature importances
     st.dataframe(feature_importance)
 
